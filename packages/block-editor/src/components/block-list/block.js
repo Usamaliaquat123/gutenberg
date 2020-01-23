@@ -139,12 +139,7 @@ export const BlockComponent = forwardRef( ( {
 		// If reversed (e.g. merge via backspace), use the last in the set of
 		// tabbables.
 		const isReverse = -1 === initialPosition;
-		const target = ( isReverse ? last : first )( textInputs );
-
-		if ( ! target ) {
-			ref.current.focus();
-			return;
-		}
+		const target = ( isReverse ? last : first )( textInputs ) || ref.current;
 
 		placeCaretAtHorizontalEdge( target, isReverse );
 	};
