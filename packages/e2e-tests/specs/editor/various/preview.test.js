@@ -15,6 +15,7 @@ import {
 	saveDraft,
 	clickOnMoreMenuItem,
 	pressKeyWithModifier,
+	getEditedPostContent,
 } from '@wordpress/e2e-test-utils';
 
 /** @typedef {import('puppeteer').Page} Page */
@@ -246,6 +247,8 @@ describe( 'Preview with Custom Fields enabled', () => {
 		await pressKeyWithModifier( 'primary', 'a' );
 		await editorPage.keyboard.press( 'Delete' );
 		await editorPage.keyboard.type( 'content 2' );
+
+		expect( await getEditedPostContent() ).toMatchSnapshot();
 
 		// Open the preview page.
 		await waitForPreviewNavigation( previewPage );
