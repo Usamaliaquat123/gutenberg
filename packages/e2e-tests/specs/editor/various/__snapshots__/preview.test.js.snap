@@ -5,3 +5,9 @@ exports[`Preview with Custom Fields enabled displays edits to the post title and
 <p>content 2</p>
 <!-- /wp:paragraph -->"
 `;
+
+exports[`Preview with Custom Fields enabled test 1`] = `
+"<!-- wp:paragraph -->
+<p>content 2</p>
+<!-- /wp:paragraph -->"
+`;

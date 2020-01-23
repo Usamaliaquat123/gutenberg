@@ -262,4 +262,20 @@ describe( 'Preview with Custom Fields enabled', () => {
 		// Make sure the editor is active for the afterEach function.
 		await editorPage.bringToFront();
 	} );
+
+	it.only( 'test', async () => {
+		await page.type( '.editor-post-title__input', 'title 1' );
+		await page.keyboard.press( 'Tab' );
+		await page.keyboard.type( 'content 1' );
+		await page.click( '.editor-post-title__input' );
+		await pressKeyWithModifier( 'primary', 'a' );
+		await page.keyboard.press( 'Delete' );
+		await page.keyboard.type( 'title 2' );
+		await page.keyboard.press( 'Tab' );
+		await pressKeyWithModifier( 'primary', 'a' );
+		await page.keyboard.press( 'Delete' );
+		await page.keyboard.type( 'content 2' );
+
+		expect( await getEditedPostContent() ).toMatchSnapshot();
+	} );
 } );
