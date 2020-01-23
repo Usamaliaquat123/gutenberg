@@ -261,6 +261,7 @@ export const BlockComponent = forwardRef( ( {
 			className={ classnames( wrapperClassName, props.className ) }
 			data-block={ clientId }
 			data-type={ name }
+			data-title={ blockType.title }
 			// Only allow shortcuts when a blocks is selected and not locked.
 			onKeyDown={ isSelected && ! isLocked ? onKeyDown : undefined }
 			// Only allow selection to be started from a selected block.
