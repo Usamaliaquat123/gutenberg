@@ -268,9 +268,6 @@ describe( 'Preview with Custom Fields enabled', () => {
 		await page.keyboard.press( 'Tab' );
 		await page.keyboard.type( 'content 1' );
 		await page.click( '.editor-post-title__input' );
-		await pressKeyWithModifier( 'primary', 'a' );
-		await page.keyboard.press( 'Delete' );
-		await page.keyboard.type( 'title 2' );
 		await page.keyboard.press( 'Tab' );
 		await pressKeyWithModifier( 'primary', 'a' );
 		await page.keyboard.press( 'Delete' );
