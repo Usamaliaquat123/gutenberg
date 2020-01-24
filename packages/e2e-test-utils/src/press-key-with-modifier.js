@@ -78,6 +78,7 @@ async function emulateSelectAll() {
 			} )
 		);
 	} );
+	await page.evaluate( () => new Promise( window.requestAnimationFrame ) );
 }
 
 async function emulateClipboard( type ) {
