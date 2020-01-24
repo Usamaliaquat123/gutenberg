@@ -264,7 +264,7 @@ describe( 'Preview with Custom Fields enabled', () => {
 	} );
 
 	it.only( 'test', async () => {
-		await page.type( '.editor-post-title__input', 'title 1' );
+		await page.keyboard.type( 'title 1' );
 		await page.keyboard.press( 'Tab' );
 		await page.keyboard.type( 'content 1' );
 		await page.click( '.editor-post-title__input' );
